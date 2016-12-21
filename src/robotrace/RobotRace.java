@@ -244,7 +244,7 @@ public class RobotRace extends Base {
  
         //gl.glDisable(GL_LIGHTING); Might be used if colors distort later when lighting is added. 
         gl.glMatrixMode(GL_MODELVIEW); //To specify we are in modelview mode
-
+//GITHUB TEST!
         
         //Draws yellow sphere in the origin
         gl.glColor3f(1f,1f,0f);
