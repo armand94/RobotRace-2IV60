@@ -64,6 +64,7 @@ public class RobotRace extends Base {
     /** Array of the four robots. */
     private final Robot[] robots;
     
+    public static int slices = 25;
     /** Instance of the camera. */
     private final Camera camera;
     
@@ -244,30 +245,30 @@ public class RobotRace extends Base {
  
         //gl.glDisable(GL_LIGHTING); Might be used if colors distort later when lighting is added. 
         gl.glMatrixMode(GL_MODELVIEW); //To specify we are in modelview mode
-//GITHUB TEST!
+
         
         //Draws yellow sphere in the origin
         gl.glColor3f(1f,1f,0f);
         glut.glutSolidSphere(0.03, 180, 180);
         
-        //Draws x-axis in red
-        gl.glPushMatrix();
-        gl.glRotatef(90, 0, 0, 1);
-        gl.glColor3f(1f,0f,0f);
-        drawArrow();
-        gl.glPopMatrix();
-        
         //Draws y-axis in green
         gl.glPushMatrix();
-        gl.glRotatef(90, 0, -1, 0);
+        gl.glRotatef(90, 0, 0, 1);
         gl.glColor3f(0f,1f,0f);
         drawArrow();
         gl.glPopMatrix();
-
+        
         //Draws z-axis in blue
         gl.glPushMatrix();
-        gl.glRotatef(90, -1, 0, 0);
+        gl.glRotatef(90, 0, -1, 0);
         gl.glColor3f(0f,0f,1f);
+        drawArrow();
+        gl.glPopMatrix();
+
+        //Draws x-axis in red
+        gl.glPushMatrix();
+        gl.glRotatef(90, -1, 0, 0);
+        gl.glColor3f(1f,0f,0f);
         drawArrow();
         gl.glPopMatrix();
       //gl.glEnable(GL_LIGHTING); Might be used if colors distort later when lighting is added. 
